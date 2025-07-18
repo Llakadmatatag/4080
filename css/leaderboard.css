@@ -1,0 +1,176 @@
+/* Leaderboard Page Specific Styles */
+.leaderboard-container {
+    background: rgba(30, 30, 30, 0.7);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-top: 2rem;
+    border: 1px solid rgba(139, 0, 0, 0.3);
+}
+
+.leaderboard-header {
+    display: grid;
+    grid-template-columns: 60px 3fr 1fr 1fr;
+    background: linear-gradient(90deg, var(--primary-color), #6d0000);
+    color: white;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.leaderboard-entries {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.leaderboard-entries > div {
+    display: grid;
+    grid-template-columns: 60px 3fr 1fr 1fr;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+}
+
+.leaderboard-entries > div:last-child {
+    border-bottom: none;
+}
+
+.leaderboard-entries > div:hover {
+    background: rgba(255, 255, 255, 0.03);
+    transform: scale(1.005);
+}
+
+.rank {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--accent-color);
+}
+
+.player {
+    display: flex;
+    align-items: center;
+}
+
+.player-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.player-name {
+    font-weight: 500;
+}
+
+.score, .level {
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Podium Styles */
+.leaderboard-entries > div:nth-child(1) {
+    background: rgba(255, 215, 0, 0.1);
+    border-left: 3px solid var(--accent-color);
+}
+
+.leaderboard-entries > div:nth-child(1) .rank {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+}
+
+.leaderboard-entries > div:nth-child(2) {
+    background: rgba(192, 192, 192, 0.1);
+    border-left: 3px solid silver;
+}
+
+.leaderboard-entries > div:nth-child(2) .rank {
+    color: silver;
+    font-size: 1.2rem;
+}
+
+.leaderboard-entries > div:nth-child(3) {
+    background: rgba(205, 127, 50, 0.1);
+    border-left: 3px solid #cd7f32;
+}
+
+.leaderboard-entries > div:nth-child(3) .rank {
+    color: #cd7f32;
+    font-size: 1.1rem;
+}
+
+/* Time Filter */
+.time-filter {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+/* User Position */
+.user-position {
+    padding: 1rem 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    text-align: right;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.user-position strong {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    margin-left: 0.3rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .leaderboard-header,
+    .leaderboard-entries > div {
+        grid-template-columns: 40px 2fr 1fr 1fr;
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .player-avatar {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+    
+    .time-filter {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .time-btn {
+        margin: 0.1rem 0;
+        width: 100%;
+    }
+}
+
+/* Scrollbar Styling */
+.leaderboard-entries::-webkit-scrollbar {
+    width: 8px;
+}
+
+.leaderboard-entries::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.leaderboard-entries::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+.leaderboard-entries::-webkit-scrollbar-thumb:hover {
+    background: #6d0000;
+}
